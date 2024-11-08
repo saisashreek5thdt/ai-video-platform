@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from "next/server";
 import { v2 as cloudinary } from "cloudinary";
 import { auth } from "@clerk/nextjs/server";
@@ -15,7 +16,7 @@ interface CloudinaryUploadResult {
 }
 
 export async function POST(request: NextRequest) {
-    const { userId } = auth();
+    const { userId }:any = auth();
 
     if (!userId) {
         return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
