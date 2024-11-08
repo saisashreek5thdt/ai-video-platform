@@ -35,6 +35,7 @@ function VideoUpload() {
 
             if (!response) throw new Error("Failed To Upload Vieo");
             setIsUploading(true);
+            router.push("/home")
         } catch (error) {
             console.log(error);
         } finally {
