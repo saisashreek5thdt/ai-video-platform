@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextRequest, NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 
@@ -10,6 +11,7 @@ export async function GET(request: NextRequest) {
         });
         return NextResponse.json(videos);
     } catch (error) {
+        console.log(error);
         return NextResponse.json(
             { error: "Error Fetching Videos" },
             { status: 500 }
