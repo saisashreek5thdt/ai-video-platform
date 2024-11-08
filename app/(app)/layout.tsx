@@ -12,6 +12,7 @@ import {
   UploadIcon,
   ImageIcon,
 } from "lucide-react";
+import Image from "next/image";
 
 const sidebarItems = [
   { href: "/home", icon: LayoutDashboardIcon, label: "Home Page" },
@@ -71,7 +72,9 @@ export default function AppLayout({
                 <>
                   <div className="avatar">
                     <div className="w-8 h-8 rounded-full">
-                      <img
+                      <Image
+                        width="400"
+                        height="400"
                         src={user.imageUrl}
                         alt={
                           user.username || user.emailAddresses[0].emailAddress
