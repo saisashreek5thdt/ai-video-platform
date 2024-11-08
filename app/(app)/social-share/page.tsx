@@ -162,7 +162,7 @@ export default function SocialShare() {
                                             crop="fill"
                                             aspectRatio={
                                                 socialFormats[selectedFormat]
-                                                    .aspectRatio
+                                                    .aspecRatio
                                             }
                                             gravity="auto"
                                             ref={imageRef}
