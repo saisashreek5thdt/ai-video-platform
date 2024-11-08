@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 
@@ -13,7 +14,7 @@ const isPublicApiRoute = createRouteMatcher([
 
 
 export default clerkMiddleware((auth, req) => {
-    const {userId} = auth();
+    const {userId}:any = auth();
     const currentUrl = new URL(req.url)
      const isAccessingDashboard = currentUrl.pathname === "/home"
      const isApiRequest = currentUrl.pathname.startsWith("/api")
